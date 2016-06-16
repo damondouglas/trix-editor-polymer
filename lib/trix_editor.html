@@ -4,7 +4,10 @@
   <script src="trix.js"></script>
   <script src="trixwrapper.js"></script>
   <link rel="import" href="../../packages/polymer_elements/paper_button.html">
+  <link rel="import" href="../../packages/polymer_elements/paper_toolbar.html">
   <link rel="import" href="../../packages/polymer_elements/paper_material.html">
+  <link rel="import" href="../../packages/polymer_elements/paper_icon_button.html">
+  <link rel="import" href="../../packages/polymer_elements/editor_icons.html">
 </head>
 
 <dom-module id="x-trix-editor">
@@ -13,21 +16,28 @@
       :root {
 
       }
-      paper-button.active {
+      .bold.active {
         background-color: #9e9e9e;
       }
+
       trix-editor {
         height: 800px;
         padding: 50px;
         outline: 0px solid transparent;
       }
+
       paper-material {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin: 20px;
+      }
+
+      paper-toolbar {
+        --paper-toolbar-background: #d6d6d6;
       }
     </style>
     <div>
-      <paper-button on-click="boldClicked">bold</paper-button>
+      <paper-toolbar>
+        <paper-icon-button class="bold" icon="editor:format-bold" on-click="boldClicked"></paper-icon-button>
+      </paper-toolbar>
       <paper-material elevation="1">
         <trix-editor></trix-editor>
       </paper-material>

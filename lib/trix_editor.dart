@@ -26,7 +26,7 @@ class XTrixEditor extends PolymerElement {
   }
 
   setToolbarFromSelection() {
-      var bold = this.querySelector("paper-button");
+      var bold = this.querySelector(".bold");
       bold.classes.remove("active");
       if (isBold) bold.classes.add("active");
   }
