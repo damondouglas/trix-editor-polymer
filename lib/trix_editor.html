@@ -1,0 +1,36 @@
+<head>
+  <!-- <link rel="import" href="../../packages/<some polymer package>/<some element>.html"> -->
+  <link rel="stylesheet" href="trix.css">
+  <script src="trix.js"></script>
+  <script src="trixwrapper.js"></script>
+  <link rel="import" href="../../packages/polymer_elements/paper_button.html">
+  <link rel="import" href="../../packages/polymer_elements/paper_material.html">
+</head>
+
+<dom-module id="x-trix-editor">
+  <template>
+    <style>
+      :root {
+
+      }
+      paper-button.active {
+        background-color: #9e9e9e;
+      }
+      trix-editor {
+        height: 800px;
+        padding: 50px;
+        outline: 0px solid transparent;
+      }
+      paper-material {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    </style>
+    <div>
+      <paper-button on-click="boldClicked">bold</paper-button>
+      <paper-material elevation="1">
+        <trix-editor></trix-editor>
+      </paper-material>
+    </div>
+  </template>
+</dom-module>
