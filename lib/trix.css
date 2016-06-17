@@ -1,3 +1,18 @@
 trix-toolbar {
   display: none;
 }
+
+figcaption {
+  display: none;
+}
+
+a.remove {
+  display: none;
+}
+
+figure {
+  margin: 0;
+  width: 100px;
+  height: 100px;
+  display: inline;
+}

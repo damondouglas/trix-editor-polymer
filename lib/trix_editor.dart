@@ -6,6 +6,7 @@ import 'dart:js';
 import 'dart:async';
 import 'package:web_components/web_components.dart' show HtmlImport;
 import 'package:polymer/polymer.dart';
+import 'x-thumbnail.dart';
 
 @PolymerRegister('x-trix-editor')
 class XTrixEditor extends PolymerElement {
@@ -16,7 +17,7 @@ class XTrixEditor extends PolymerElement {
   attached() {
     document.addEventListener('trix-initialize', (e) {
       editor = context.callMethod("getTrixEditor", []);
-      // editor.callMethod("insertHTML", ["asdfd Hello fdfdfdfd"]);
+      // editor.callMethod("insertHTML", ["<img src='http://lorempixel.com/100/100/cats/'></img>"]);
       this.querySelector('trix-editor').focus();
     });
 
@@ -37,5 +38,11 @@ class XTrixEditor extends PolymerElement {
     else editor.callMethod("deactivateAttribute", ["bold"]);
     setToolbarFromSelection();
     this.querySelector('trix-editor').focus();
+  }
+
+  @reflectable
+  addClicked([_,__]) {
+      // editor.callMethod("insertHTML", ["<img src='http://lorempixel.com/100/100/cats/'></img>"]);
+      editor.callMethod("insertHTML", ["<x-thumbnail></x-thumbnail>"]);
   }
 }
